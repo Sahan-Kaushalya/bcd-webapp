@@ -1,6 +1,5 @@
 package lk.kaushalya.web.servlet;
 
-import jakarta.ejb.EJB;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -11,17 +10,8 @@ import java.io.IOException;
 
 @WebServlet("/a")
 public class A extends HttpServlet {
-
-    @EJB
-    Cal cal;
-
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        cal.getResult(10,20);
         resp.getWriter().write("This is a Servlet A");
-    }
-
-    public void m() {
-        System.out.println("A m()");
     }
 }
